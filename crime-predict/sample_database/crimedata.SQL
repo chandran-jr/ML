@@ -11,7 +11,7 @@ CREATE TABLE crimedata (
 );
 
 INSERT INTO crimedata (crimeID, FirstName, LastName, City, Hours, Minutes, Crime, latitude, longitude)
-VALUES (001, 'Paul', 'Joseph', 'London', 22, 36, 'Murder', 35.123456, 123.456312);
+VALUES (001, 'Paulinho', 'Joseph', 'London', 22, 36, 'Murder', 35.123456, 123.456312);
 
 INSERT INTO crimedata (crimeID, FirstName, LastName, City, Hours, Minutes, Crime, latitude, longitude)
 VALUES (002, 'Chris', 'Jordie', 'Paris', 01, 40, 'Theft', 120.123456, 150.456312);
