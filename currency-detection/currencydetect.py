@@ -17,12 +17,11 @@ total = 0
 
 while 1:
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
+    speak("please click image")
     imgfile = input("Enter image name")
     
     image = Image.open(imgfile)
 
-#resize the image to a 224x224 with the same strategy as in TM2:
-#resizing the image to be at least 224x224 and then cropping from the center
     size = (224, 224)
     image = ImageOps.fit(image, size, Image.ANTIALIAS)
 
@@ -84,6 +83,7 @@ while 1:
     speak("if u want to continue press y else press q ")
     inp = input()
     if inp=='q':
+        speak("exiting app")
         break
 
 
