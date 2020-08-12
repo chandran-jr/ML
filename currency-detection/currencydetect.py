@@ -2,7 +2,7 @@ import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
 
-# Disable scientific notation for clarity
+# Disabling scientific notation for clarity
 np.set_printoptions(suppress=True)
 
 currency = ['2000', '500','200', '100', '100','50','50']
