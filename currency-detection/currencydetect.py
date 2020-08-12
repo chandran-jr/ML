@@ -47,10 +47,29 @@ while 1:
     for i in range(0,7):
         if prediction[0,i]>0.6:
             index=i
+            
 
     result = (currency[index])
+    
+    if(index==0):
+        total = total+2000
+    elif(index==1):
+        total = total+500
+    elif(index==2):
+        total = total+200
+    elif(index==3):
+        total = total+100
+    elif(index==4):
+        total = total+100
+    elif(index==5):
+        total = total+50
+    else:
+        total = total+50
+        
  
     print(result)
+    print("Total:")
+    print(total)
 
 
     def speak(string):
@@ -59,8 +78,10 @@ while 1:
         eng.runAndWait()
     
     speak(result)
+    speak("your total is now rupees")
+    speak(total)
     
-    speak("if u want to quit press q")
+    speak("if u want to continue press y else press q ")
     inp = input()
     if inp=='q':
         break
