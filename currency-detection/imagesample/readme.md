@@ -1,1 +1,1 @@
-Folder for thevtesting images
+Folder for the testing images
