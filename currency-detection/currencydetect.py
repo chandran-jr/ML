@@ -7,7 +7,7 @@ import pyttsx3
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
 
-currency = ["two thousand rupee note", 'five hundred rupee note','two hundred ruppee note', 'one hundred rupee note', 'one hundred rupee note','fifty rupee note','fifty rupee note']
+currency = ["two thousand rupee note", 'five hundred rupee note','two hundred rupee note', 'one hundred rupee note', 'one hundred rupee note','fifty rupee note','fifty rupee note']
 
 
 # Load the model
@@ -16,8 +16,24 @@ model = tensorflow.keras.models.load_model('keras_model.h5')
 total = 0
 
 while 1:
+    
+    def userInput():
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            print("Listening...")
+            audio = r.listen(source)
+            query = r.recognize_google(audio)
+        return query
+    
+    
+    def speak(string):
+        eng = pyttsx3.init()
+        eng.say(string)
+        eng.runAndWait()
+        
+        
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-    speak("please click image")
+    speak("please click an image of the currency")
     imgfile = input("Enter image name")
     
     image = Image.open(imgfile)
@@ -69,21 +85,18 @@ while 1:
     print(result)
     print("Total:")
     print(total)
-
-
-    def speak(string):
-        eng = pyttsx3.init()
-        eng.say(string)
-        eng.runAndWait()
     
     speak(result)
     speak("your total is now rupees")
     speak(total)
     
-    speak("if u want to continue press y else press q ")
-    inp = input()
-    if inp=='q':
+    speak("if u want to continue say yes else say no ")
+    inp = userInput().lower()
+    if inp=='no':
         speak("exiting app")
+        print("App Exited.")
         break
+    else:
+        speak("continuing app")
 
 
