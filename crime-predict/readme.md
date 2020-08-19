@@ -10,8 +10,6 @@ An ML program i did for the Hac'KP hackathon July 2020-September 2020
  The dataset had 5.6L entries/rows
  
  
- I used just 2k for easier computing.
- 
  I used KNN for this project.
  
- One particular crime outnumbered the rest due to which mostly the output is that outnumbered crime.
+ Also added a database using SQL which is the kind of database one requires for optimum results in crime prediction
